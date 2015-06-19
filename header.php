@@ -3,6 +3,7 @@
 <head>
 	<title><?php bloginfo('name'); ?></title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
