@@ -1,12 +1,15 @@
 {% extends "main.twig" %}
 	{% block content %}
 		<div class="row">
-			<div class="col-md-4">
 				{% for post in posts %}
-					<a href="{{post.permalink}}"><h3>{{post.title}}</h3></a>
-					{{post.get_content}}
+					<div class="col-md-4">
+						{% if post.thumbnail %}
+							<img src="{{post.thumbnail.src}}" alt="{{post.title}}" class="img-square">
+						{% endif %}
+						<a href="{{post.permalink}}"><h3>{{post.title}}</h3></a>
+						{{ post.get_preview(30) }}
+						<hr>
+					</div>
 				{% endfor %}
-			</div>
 		</div>
-		{% include 'about.twig' %}
 	{% endblock %}
