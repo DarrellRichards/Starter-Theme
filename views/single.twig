@@ -1,0 +1,21 @@
+{% extends 'main.twig' %}
+	{% block content %}
+	    <div class="row text-center">
+			<div class="col-md-12 featured-image">
+				{% if post.thumbnail %}
+					<img src="{{post.thumbnail.src}}" alt="{{post.title}}" class="img-square">
+				{% endif %}
+			</div>
+			<div class="col-md-12 post-title">
+				<h2>{{post.title}}</h2>
+			</div>
+			<div class="col-md-12 meta">
+					Posted By: <a href="{{post.author.link}}">{{post.author.name}}</a>
+					Posted On: {{post.display_date}}
+					<hr>
+			</div>
+			<div class="col-md-12 post-content">
+				{{post.get_content}}
+			</div>
+		</div>
+	{% endblock %}
